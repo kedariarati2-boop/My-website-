@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tech for Early Child Learning — Priya & Aarti</title>
+
+<style>
+
+:root{
+
+  --accent:#6C63FF;
+
+  --muted:#6b7280;
+
+  --bg:#f7f7fb;
+
+  --card:#ffffff;
+
+  --highlight:#ff69b4;
+
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background:var(--bg);
+
+  color:#111;
+
+  line-height:1.6;
+
+  cursor: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png'), auto;
+
+}
+
+/* Header */
+
+header{
+
+  background:linear-gradient(90deg,var(--accent),#8ec5ff);
+
+  color:white;
+
+  padding:28px 16px;
+
+  text-align:center;
+
+  box-shadow:0 4px 6px rgba(0,0,0,0.1);
+
+}
+
+header h1{
+
+  font-size:2.5em;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:10px;
+
+}
+
+.emoji-burst{font-size:28px;animation:bounce 3s infinite, rotate 8s linear infinite;}
+
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}}
+
+@keyframes rotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+.byline{font-size:14px;opacity:0.95;margin-top:5px;}
+
+nav{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+
+.pill{background:rgba(255,255,255,0.15);padding:8px 12px;border-radius:999px;font-size:13px;cursor:pointer;transition:0.3s;}
+
+.pill:hover{background:rgba(255,255,255,0.25);}
+
+/* Main container */
+
+.container{max-width:1200px;margin:20px auto;padding:0 16px}
+
+/* Cards */
+
+.card{
+
+  background:var(--card);
+
+  border-radius:14px;
+
+  padding:18px;
+
+  margin-bottom:16px;
+
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
+
+  transition:transform .3s ease, box-shadow .3s ease;
+
+}
+
+.card:hover{
+
+  transform: translateY(-10px) rotate(-1deg);
+
+  box-shadow:0 20px 40px rgba(108,99,255,0.15);
+
+}
+
+h2{margin-bottom:10px;font-size:20px;color:var(--highlight);}
+
+ul{list-style:none;padding-left:0;}
+
+ul li{padding:10px 12px;margin-bottom:8px;background:#fff0f5;border-radius:8px;position:relative;transition:transform 0.2s;}
+
+ul li:before{content:'✨';margin-right:6px;position:absolute;left:0px;top:10px;}
+
+ul li:hover{transform:translateY(-2px);}
+
+p{margin-bottom:10px;color:var(--muted);}
+
+/* Tables */
+
+table{width:100%;border-collapse:collapse;margin-top:10px;box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+
+th,td{padding:12px;border-bottom:1px solid #f0f0f3;text-align:left;}
+
+th{background:#ffb6c1;color:#333;font-weight:bold;}
+
+tr:nth-child(even){background:#f2f2f2;}
+
+/* Accordion */
+
+.acc-item{border:1px solid #eef0ff;border-radius:10px;overflow:hidden;margin-bottom:8px;}
+
+.acc-head{padding:10px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;background:#fbfbff;}
+
+.acc-body{padding:10px 14px;border-top:1px solid #f2f4ff;background:#fbfbff;display:none;}
+
+/* Gallery */
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px;}
+
+.gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;transition:transform .3s;cursor:pointer;}
+
+.gallery img:hover{transform:scale(1.05);}
+
+/* Fun Fact */
+
+.fun-fact{text-align:center;background:#e0ffff;padding:16px;border-radius:10px;margin:16px 0;font-weight:bold;font-size:1.1em;border:2px dashed #00ced1;}
+
+/* Conclusion */
+
+.conclusion{background:#f0fff0;padding:24px;text-align:center;border-top:4px solid #3cb371;border-radius:8px;font-size:1.1em;line-height:1.6;}
+
+/* Footer */
+
+footer{text-align:center;padding:16px 0;color:var(--muted);font-size:14px;}
+
+/* Responsive */
+
+@media (max-width:880px){.gallery{grid-template-columns:repeat(2,1fr);}}
+
+@media (max-width:640px){.gallery{grid-template-columns:1fr;}}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <h1><span class="emoji-burst">🌈</span> Tech for Early Child Learning</h1>
+
+  <div class="byline">By: Priya Bhosale (1048) | Aarti Kedari (1055)</div>
+
+  <nav aria-label="main navigation">
+
+    <span class="pill" onclick="scrollToSection('intro')">Introduction</span>
+
+    <span class="pill" onclick="scrollToSection('objectives')">Objectives</span>
+
+    <span class="pill" onclick="scrollToSection('tools')">Tools & Apps</span>
+
+    <span class="pill" onclick="scrollToSection('benefits')">Benefits</span>
+
+    <span class="pill" onclick="scrollToSection('challenges')">Challenges</span>
+
+    <span class="pill" onclick="scrollToSection('activities')">Activities</span>
+
+    <span class="pill" onclick="scrollToSection('gallery')">Gallery</span>
+
+    <span class="pill" onclick="scrollToSection('contact')">Contact us</span>
+
+    <span class="pill" onclick="scrollToSection('feedback')">Feedback</span>
+
+  </nav>
+
+</header>
+
+<main class="container">
+
+<section class="card" id="intro">
+
+<h2>Introduction</h2>
+
+<p>Early child learning covers birth to about 8 years and lays the foundation for emotional, social, physical, and intellectual growth. Technology — used thoughtfully — adds interactive, visual, and playful ways to strengthen language, numeracy, creativity, and problem solving.</p>
+
+<div class="fun-fact">🧠 Fun Fact: 90% of a child’s brain develops before age 5!</div>
+
+</section>
+
+<section class="card" id="objectives">
+
+<h2>Objectives</h2>
+
+<ul>
+
+<li>Understand the role of technology in early education</li>
+
+<li>Explore learning apps and digital tools for children</li>
+
+<li>Promote creative, social and cognitive skill development</li>
+
+<li>Show safe, age-appropriate practices for tech use</li>
+
+</ul>
+
+</section>
+
+<section class>
+
+            <h2>💻 Tools & Technologies in ECE</h2>
+
+            <p>Modern classrooms use a variety of tools to make learning dynamic and accessible:</p>
+
+            <table class="tools-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Tool/Technology</th>
+
+                        <th>Description & Use</th>
+
+                        <th>Key Example Apps</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Educational Apps</td>
+
+                        <td>Interactive games and activities to teach counting, spelling, and shapes.</td>
+
+                        <td><strong>Khan Academy Kids, ABCmouse, Duolingo ABC</strong></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Smart Boards & Tablets</td>
+
+                        <td>Used by teachers for visual lessons; tablets allow personalized, self-paced learning.</td>
+
+                        <td>Smart Classroom Setups </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Interactive Games</td>
+
+                        <td>Digital tools that make learning concepts enjoyable and stress-free.</td>
+
+                        <td>Puzzle games, virtual shape matching, and digital storytelling.</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Virtual Reality (VR)</td>
+
+                        <td>Creating immersive, hands-on learning experiences (e.g., virtual field trips).</td>
+
+                        <td>Simple VR viewers for engaging visual tours.</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        
+
+<section class="card" id="benefits">
+
+<h2>Benefits of Technology in Early Learning</h2>
+
+<ul>
+
+<li>Improves attention, memory, and engagement</li>
+
+<li>Encourages creativity, curiosity and exploration</li>
+
+<li>Enables personalised learning and progress tracking</li>
+
+<li>Makes learning fun through play-based interactions</li>
+
+</ul>
+
+</section>
+
+<section class="card" id="challenges">
+
+<h2>Challenges & Precautions</h2>
+
+<ul>
+
+<li>Limit screen time: recommended ≤ 1 hour/day for young children</li>
+
+<li>Always use age-appropriate apps and supervise usage</li>
+
+<li>Watch for distractions and balance digital with offline play</li>
+
+<li>Address the digital divide — ensure equitable access</li>
+
+</ul>
+
+</section>
+
+<section class="card" id="activities">
+
+<h2>Types of Early Learning Activities</h2>
+
+<div class="acc-item">
+
+<div class="acc-head" onclick="toggleAcc(this)">Storytelling & Reading <span>+</span></div>
+
+<div class="acc-body">Use picture books, read-aloud animations and interactive story apps to build vocabulary and comprehension.</div>
+
+</div>
+
+<div class="acc-item">
+
+<div class="acc-head" onclick="toggleAcc(this)">Music, Rhymes & Movement <span>+</span></div>
+
+<div class="acc-body">Songs and movement games improve rhythm, memory and social interaction.</div>
+
+</div>
+
+<div class="acc-item">
+
+<div class="acc-head" onclick="toggleAcc(this)">Drawing, Puzzles & Crafts <span>+</span></div>
+
+<div class="acc-body">Hands-on activities develop fine motor skills and creativity; combine with digital prompts for blended learning.</div>
+
+</div>
+
+</section>
+
+<section class="card" id="gallery">
+
+<h2>Image Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop" alt="Children using tablets">
+
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop" alt="Smart classroom">
+
+<img src="" alt="Educational app screenshot">
+
+</div>
+
+</section>
+
+ <section class="card" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Email: <a href="mailto:info@earlychildlearning.com">info@earlychildlearning.com</a></p>
+
+        <p>Phone: +91 123 456 7890</p>
+
+    </section>
+
+<section class="card" id="feedback">
+
+<h2>Feedback / Contact</h2>
+
+<form id="feedbackForm" onsubmit="return handleSubmit(event)">
+
+<label for="name">Your name</label>
+
+<input id="name" required />
+
+<label for="role">I am a</label>
+
+<select id="role"><option>Parent</option><option>Teacher</option><option>Student</option><option>Other</option></select>
+
+<label for="msg">Message</label>
+
+<textarea id="msg" rows="4" required></textarea>
+
+<div style="display:flex;gap:8px;margin-top:10px">
+
+<button class="btn" type="submit">Send Feedback</button>
+
+<button type="button" class="btn ghost" onclick="document.getElementById('feedbackForm').reset()">Reset</button>
+
+</div>
+
+<div id="thanks" style="display:none;margin-top:12px;padding:12px;border-radius:8px;background:#f0fff7;border:1px solid #dff3ea;color:#044e26">Thanks! Your feedback has been recorded locally.</div>
+
+</form>
+
+</section>
+
+<section class="card">
+
+<h2>Conclusion</h2>
+
+<div class="conclusion">
+
+<p>Technology, when used wisely and in moderation, can truly transform early childhood education. It makes learning more effective, highly engaging, and accessible to a broader range of children.</p>
+
+<p>By integrating digital tools thoughtfully, we can open doors to creativity, curiosity, and essential skill-building, fully preparing children for the future world.</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+&copy; 2025 Tech for Early Child Learning Project. All Rights Reserved.
+
+</footer>
+
+<script>
+
+// Accordion toggle
+
+function toggleAcc(el){
+
+  const body = el.nextElementSibling;
+
+  const open = body.style.display==='block';
+
+  document.querySelectorAll('.acc-body').forEach(b=>b.style.display='none');
+
+  document.querySelectorAll('.acc-head span').forEach(s=>s.textContent='+');
+
+  if(!open){body.style.display='block';el.querySelector('span').textContent='−';}
+
+}
+
+// Feedback form local storage
+
+function handleSubmit(e){
+
+  e.preventDefault();
+
+  const name=document.getElementById('name').value.trim();
+
+  const role=document.getElementById('role').value;
+
+  const msg=document.getElementById('msg').value.trim();
+
+  if(!name||!msg){alert('Please fill name and message');return false}
+
+  const store=JSON.parse(localStorage.getItem('ecf_feedback')||'[]');
+
+  store.push({name,role,msg,time:new Date().toISOString()});
+
+  localStorage.setItem('ecf_feedback',JSON.stringify(store));
+
+  document.getElementById('feedbackForm').reset();
+
+  document.getElementById('thanks').style.display='block';
+
+  setTimeout(()=>document.getElementById('thanks').style.display='none',4000);
+
+  return false;
+
+}
+
+// Gallery modal
+
+document.querySelectorAll('.gallery img').forEach(img=>{
+
+  img.addEventListener('click',()=>{
+
+    const modal=document.createElement('div');
+
+    modal.style.position='fixed';modal.style.left=0;modal.style.top=0;modal.style.right=0;modal.style.bottom=0;
+
+    modal.style.background='rgba(0,0,0,0.6)';modal.style.display='flex';modal.style.alignItems='center';modal.style.justifyContent='center';
+
+    modal.addEventListener('click',()=>document.body.removeChild(modal));
+
+    const big=document.createElement('img');big.src=img.src;big.style.maxWidth='90%';big.style.maxHeight='90%';big.style.borderRadius='10px';
+
+    modal.appendChild(big);document.body.appendChild(modal);
+
+  });
+
+});
+
+// Smooth scroll
+
+function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+</script>
+
+</body>
+
+</html>
+    
+  </body>
+  
+</html>
